@@ -2,11 +2,45 @@
   "name": "storefront-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/app.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tsc",
+    "start": "node ./build/app.js",
+    "dev": "nodemon ./src/app.ts",
+    "lint": "eslint --ext .ts .",
+    "lint:fix": "eslint --fix --ext .ts .",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "jasmine": "jasmine",
+    "db:up": "npx db-migrate up",
+    "db:down": "npx db-migrate reset",
+    "test": "set ENV=test&& npx db-migrate --env test up&& jasmine &&npx db-migrate --env test reset"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "jasmine-spec-reporter": "^7.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jasmine": "^4.0.3",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/pg": "^8.6.5",
+    "@types/supertest": "^2.0.12",
+    "jasmine": "^4.1.0",
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  }
 }
