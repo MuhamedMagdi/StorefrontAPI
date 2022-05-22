@@ -10,13 +10,13 @@ import {
 describe('Order model', () => {
     const testOrder: ORDER = {
         status: 'active',
-        user_id: 1
+        user_id: 1,
     };
 
     const testOrderProduct: ORDER_PRODUCT = {
         product_id: 1,
         quantity: 10,
-        order_id: 0
+        order_id: 0,
     };
 
     let testOrderId: number;
@@ -39,12 +39,17 @@ describe('Order model', () => {
     });
 
     it('should add a product to an order', async () => {
-        const productOrder: ORDER_PRODUCT = await createProduct(testOrderProduct);
+        const productOrder: ORDER_PRODUCT = await createProduct(
+            testOrderProduct
+        );
         expect(productOrder.quantity).toEqual(testOrderProduct.quantity);
     });
 
     it('should get products by order id', async () => {
-        const product: PRODUCT_ORDER[] = await getProductsByOrderId(testOrderId, testOrder.user_id);
+        const product: PRODUCT_ORDER[] = await getProductsByOrderId(
+            testOrderId,
+            testOrder.user_id
+        );
         expect(product.length).toBeGreaterThan(0);
     });
 });
