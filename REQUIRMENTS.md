@@ -4,6 +4,12 @@ The company stakeholders want to create an online storefront to showcase their g
 These are the notes from a meeting with the frontend developer that describe what endpoints the API needs to supply, as well as data shapes the frontend and backend have agreed meet the requirements of the application. 
 
 ## API Endpoints
+### Auth
+|Function|URL|Method|Args|Token Required|Body|Response|
+|-|-|-|-|-|-|-|
+|Register|`/api/register`|`POST`|`-`|`False`|`{`<br>`"username": "Magdi",`<br>`"firstName": "Mohamed",`<br>`"lastName": "Magdi"`<br>`"password":"123"`<br>`}`|`{`<br>`"id": 1,`<br>`"username": "Magdi",`<br>`"firstName": "Mohamed",`<br>`"lastName": "Magdi"`<br>`}`|
+|Sign in|`/api/sign-in`|`POST`|`-`|`False`|`{`<br>`"username": "Magdi",`<br>`"password":"123"`<br>`}`|`{`<br>`"token": JWTTOKEN,`<br>`}`
+
 #### Products
 |Function|URL|Method|Args|Token Required|Body|Response|
 |-|-|-|-|-|-|-|
@@ -15,9 +21,9 @@ These are the notes from a meeting with the frontend developer that describe wha
 #### Users
 |Function|URL|Method|Args|Token Required|Body|Response|
 |-|-|-|-|-|-|-|
-|Index|`api/users`|`GET`|`-`|`True`|`-`|`[{`<br>`"id": 1,`<br>`"userName": "Magdi",`<br>`"firstName": "Mohamed",`<br>`"lastName": "Magdi"`<br>`}]`|
-|Show|`api/users/:id`|`GET`|`user id`|`True`|`-`|`{`<br>`"id": 1,`<br>`"userName": "Magdi",`<br>`"firstName": "Mohamed",`<br>`"lastName": "Magdi"`<br>`}`|
-|Create|`api/users`|`POST`|`-`|`True`|`{`<br>`"userName": "Magdi",`<br>`"firstName": "Mohamed",`<br>`"lastName": "Magdi"`<br>`"password":"123"`<br>`}`|`{`<br>`"id": 1,`<br>`"userName": "Magdi",`<br>`"firstName": "Mohamed",`<br>`"lastName": "Magdi"`<br>`}`|
+|Index|`api/users`|`GET`|`-`|`True`|`-`|`[{`<br>`"id": 1,`<br>`"username": "Magdi",`<br>`"firstName": "Mohamed",`<br>`"lastName": "Magdi"`<br>`}]`|
+|Show|`api/users/:id`|`GET`|`user id`|`True`|`-`|`{`<br>`"id": 1,`<br>`"username": "Magdi",`<br>`"firstName": "Mohamed",`<br>`"lastName": "Magdi"`<br>`}`|
+|Create|`api/users`|`POST`|`-`|`True`|`{`<br>`"username": "Magdi",`<br>`"firstName": "Mohamed",`<br>`"lastName": "Magdi"`<br>`"password":"123"`<br>`}`|`{`<br>`"id": 1,`<br>`"username": "Magdi",`<br>`"firstName": "Mohamed",`<br>`"lastName": "Magdi"`<br>`}`|
 |Orders for user|`api/users/:id/orders`|`GET`|`user id`|`True`|`-`|`{`<br>`"id": 1,`<br>`"user_id": "1",`<br>`"status": "active"`<br>`}`
 
 #### Orders
