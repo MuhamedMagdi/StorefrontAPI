@@ -12,7 +12,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "db:up": "npx db-migrate up",
     "db:down": "npx db-migrate reset",
-    "test": "set ENV=test&&npx db-migrate --env test reset&& npx db-migrate --env test up&& npm run build && jasmine &&npx db-migrate --env test reset"
+    "test": "set ENV=test&& npx db-migrate --env test up&& npm run build && jasmine &&npx db-migrate --env test reset"
   },
   "keywords": [],
   "author": "",
