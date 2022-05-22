@@ -85,7 +85,7 @@ npm run db:up
 npm run db:down
 ```
 
-- Building the project and testing the scripts
+- Building the project and testing the specs on a test database 
 ```
 npm run test
 ```
