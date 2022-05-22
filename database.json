@@ -5,7 +5,7 @@
         "password": { "ENV": "PG_PASSWORD" },
         "host": { "ENV": "PG_HOST" },
         "port": { "ENV": "PG_PORT" },
-        "database": { "ENV": "PG_TEST_DB" }
+        "database": { "ENV": "PG_TEST_DATABASE" }
     },
     "dev": {
         "driver": "pg",
@@ -13,7 +13,7 @@
         "password": { "ENV": "PG_PASSWORD" },
         "host": { "ENV": "PG_HOST" },
         "port": { "ENV": "PG_PORT" },
-        "database": { "ENV": "PG_DB" }
+        "database": { "ENV": "PG_DATABASE" }
     },
     "sql-file": true
 }
