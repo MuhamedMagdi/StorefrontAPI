@@ -13,7 +13,7 @@ describe('Order model', () => {
         user_id: 1
     };
 
-    let testOrderProduct: ORDER_PRODUCT = {
+    const testOrderProduct: ORDER_PRODUCT = {
         product_id: 1,
         quantity: 10,
         order_id: 0

@@ -1,4 +1,3 @@
-import jwt, { sign } from 'jsonwebtoken';
 import config from '../../config';
 import bcrypt from 'bcrypt';
 
@@ -9,7 +8,7 @@ import { createProduct, PRODUCT } from '../../models/product.model';
 import { createOrder, ORDER } from '../../models/order.model';
 
 const createTestUser = async (): Promise<{ user: USER; token: string }> => {
-    let testUser: USER = {
+    const testUser: USER = {
         username: 'MohamedMagdi',
         firstName: 'Mohamed',
         lastName: 'Magdi',

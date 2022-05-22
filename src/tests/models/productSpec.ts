@@ -5,7 +5,6 @@ import {
     getTopFive,
     createProduct,
 } from '../../models/product.model';
-import { createTestOrder } from '../utilities/test.utilities';
 
 describe('Product model', () => {
     const testProduct: PRODUCT = {
